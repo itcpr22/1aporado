@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author tedted29
+ * @author lyka
  */
 public class log_in extends javax.swing.JFrame {
 
@@ -297,7 +297,7 @@ public class log_in extends javax.swing.JFrame {
             if (y == 1) {
                 if (z == 0) {
 
-                    int x = reg.register(fn, ln, usn, pass);
+                    int x = reg.register(usn, pass, fn, ln);
                     if (x == 1) {
                         JOptionPane.showMessageDialog(RegDialog, "Successfully Registered!");
                         this.clear_reg_txtfld();

@@ -7,7 +7,7 @@ package ActPack;
 
 /**
  *
- * @author tedted29
+ * @author lyka
  */
 public class main extends javax.swing.JFrame {
 
