@@ -13,6 +13,5 @@ public class conn {
     protected String dbname = "1aporado";
     protected String url = "jdbc:mysql://localhost/"+dbname;
     protected String username = "root";
-    protected String password = "";
-    
+    protected String password = ""; 
 }
