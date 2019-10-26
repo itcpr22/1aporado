@@ -1,0 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ActPack;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author lyka
+ */
+public class logIn_class {
+    conn con = new conn();
+    
+    String fname = "";
+    
+    public int login(String username, String password){
+        int x = 0;
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            com.mysql.jdbc.Connection conn = (com.mysql.jdbc.Connection) DriverManager.getConnection(con.url,con.username,con.password);
+            
+            String sql = "SELECT * FROM login   WHERE username = ? AND PASSWORD = MD5(?);";
+            com.mysql.jdbc.PreparedStatement pstmt = (com.mysql.jdbc.PreparedStatement) conn.prepareStatement(sql);
+            
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            
+            ResultSet rs = pstmt.executeQuery();
+            
+            if(rs.next()){
+                x = 1;
+                fname = rs.getString("firstname");
+            }else{
+                x = 0;
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(logIn_class.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(logIn_class.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return x;
+    }
+    
+}
