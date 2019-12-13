@@ -76,11 +76,22 @@ public class productClass {
         return r;
     }
 
-    int addQuantity(Object id, Object qty) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  public int product_addQty(int id, Object quantity){int y = 0;
+        try{
+    String sql = "update product set quantity = quantity+ ? where id=?;";
+    Class.forName("com.mysql.jdbc.Driver");
+    java.sql.Connection conn = (java.sql.Connection)DriverManager.getConnection("jdbc:mysql://localhost/1aporado?", "root", "");
+    java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
     
-
-   
+    pstmt.setString(1, quantity.toString());
+    pstmt.setInt(2, id);
+    y=pstmt.executeUpdate();
     
+    
+}       catch (ClassNotFoundException ex) {
+            Logger.getLogger(productClass.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(productClass.class.getName()).log(Level.SEVERE, null, ex);
+        }return y; 
+    }   
 }

@@ -89,9 +89,12 @@ public class main extends javax.swing.JFrame {
         spinQTY = new javax.swing.JSpinner();
         tfPname = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        btnAdd = new javax.swing.JButton();
         btnAddQTY = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        xst_qty1 = new javax.swing.JLabel();
+        xst_qty2 = new javax.swing.JLabel();
+        btnAdd = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         search_btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -119,13 +122,6 @@ public class main extends javax.swing.JFrame {
         spinQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jLabel2.setText("Product Name:");
-
-        btnAdd.setText("Add");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
-            }
-        });
 
         btnAddQTY.setText("Add Quantity");
         btnAddQTY.addActionListener(new java.awt.event.ActionListener() {
@@ -155,14 +151,28 @@ public class main extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAddQTY, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ftPrice)
-                    .addComponent(spinQTY)
-                    .addComponent(tfPname))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAddQTY, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                    .addGroup(addProdFrameLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addProdFrameLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(xst_qty2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(spinQTY, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfPname)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addProdFrameLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(ftPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(80, 80, 80))
+            .addGroup(addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(addProdFrameLayout.createSequentialGroup()
+                    .addGap(114, 114, 114)
+                    .addComponent(xst_qty1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(115, 115, 115)))
         );
         addProdFrameLayout.setVerticalGroup(
             addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,26 +182,41 @@ public class main extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(tfPname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(spinQTY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(spinQTY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(xst_qty2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(ftPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAdd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(45, 45, 45)
                 .addComponent(btnAddQTY)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSave)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
+            .addGroup(addProdFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(addProdFrameLayout.createSequentialGroup()
+                    .addGap(135, 135, 135)
+                    .addComponent(xst_qty1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(135, 135, 135)))
         );
+
+        btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("BRANDED T-SHIRTS");
 
+        search_btn.setBackground(new java.awt.Color(153, 255, 255));
         search_btn.setText("Search");
         search_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,6 +224,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        ptable.setBackground(new java.awt.Color(255, 0, 255));
         ptable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -218,6 +244,7 @@ public class main extends javax.swing.JFrame {
         ptable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(ptable);
 
+        btnAddProd.setForeground(new java.awt.Color(153, 0, 0));
         btnAddProd.setText("Add Product");
         btnAddProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,6 +252,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        btnDelete.setForeground(new java.awt.Color(204, 0, 0));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,6 +260,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        btnEdit.setForeground(new java.awt.Color(255, 0, 204));
         btnEdit.setText("Edit");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,6 +274,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        btnQTY.setForeground(new java.awt.Color(0, 0, 255));
         btnQTY.setText("Add Qty");
         btnQTY.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,11 +302,12 @@ public class main extends javax.swing.JFrame {
                                 .addComponent(btnQTY, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnEdit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(242, 242, 242)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(192, 192, 192))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,7 +328,7 @@ public class main extends javax.swing.JFrame {
                         .addComponent(btnEdit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnDelete)))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         pack();
@@ -363,7 +394,31 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_search_tfKeyReleased
 
     private void btnQTYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQTYActionPerformed
-        // TODO add your handling code here:
+       int row = ptable.getSelectedRow();
+        if(row != -1){
+            addProdFrame.setVisible(true);
+            addProdFrame.setLocationRelativeTo(this);
+            addProdFrame.setAlwaysOnTop(true);
+            btnSave.setVisible(false);
+            //ADDBTN1.setVisible(false);
+            btnAddQTY.setVisible(true);
+
+            id = ptable.getValueAt(row, 0);
+            Object pn = ptable.getValueAt(row, 1);
+            Object qty = ptable.getValueAt(row, 2);
+            Object pr = ptable.getValueAt(row, 3);
+
+            tfPname.setEnabled(false);
+            ftPrice.setEnabled(false);
+            spinQTY.setEnabled(true);
+
+            tfPname.setText(pn.toString());
+            xst_qty2.setText(qty.toString());
+            ftPrice.setValue(Double.valueOf(pr.toString()));
+            spinQTY.setValue(0);
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Please Select a product", "Warning", JOptionPane.WARNING_MESSAGE);
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_btnQTYActionPerformed
 
     private void ftPriceFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftPriceFocusLost
@@ -409,18 +464,12 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnAddQTYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddQTYActionPerformed
-
+      
         String pn = tfPname.getText();
-        Object qty = spinQTY.getValue();
-        int c = JOptionPane.showConfirmDialog(addProdFrame, "Would you like to add\n " + qty + "\n to " + pn + " product?", "Add Quantity", JOptionPane.YES_NO_OPTION);
-        if (c == JOptionPane.YES_OPTION) {
-            int r = (int) prod.addQuantity(id, qty);
-            if (r == 1) {
-                JOptionPane.showMessageDialog(addProdFrame, "Quantity Updated");
-                addProdFrame.setVisible(false);
-                this.refresh();
-            }
-        }           // TODO add your handling code here:
+        int a = new productClass().product_addQty(Integer.parseInt(id.toString()), spinQTY.getValue());
+        refresh() ;
+        addProdFrame.setVisible(false);
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAddQTYActionPerformed
 
     /**
@@ -472,12 +521,15 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable ptable;
     private javax.swing.JButton search_btn;
     private javax.swing.JTextField search_tf;
     private javax.swing.JSpinner spinQTY;
     private javax.swing.JTextField tfPname;
+    private javax.swing.JLabel xst_qty1;
+    private javax.swing.JLabel xst_qty2;
     // End of variables declaration//GEN-END:variables
  final void refresh() {
         try {
