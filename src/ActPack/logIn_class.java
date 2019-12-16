@@ -19,6 +19,7 @@ import java.util.logging.Logger;
  */
 public class logIn_class {
     conn con = new conn();
+//<<<<<<< HEAD
     
     String fname = "";
     
@@ -53,4 +54,38 @@ public class logIn_class {
         return x;
     }
     
+//=======
+//    String fname = "";
+    
+    public int login(String username, String password){
+        int x = 0;
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = (Connection) DriverManager.getConnection(con.url,con.username,con.password);
+            
+            String sql = "SELECT * FROM login WHERE username = ? AND password = MD5(?);";
+            PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement(sql);
+            
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            
+            ResultSet rs = pstmt.executeQuery();
+            
+            if(rs.next()){
+                fname = rs.getString("firstname");
+                x = 1;
+            }else{
+                x = 0;
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(logIn_class.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(logIn_class.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return x;
+    }
+//>>>>>>> origin/master
 }

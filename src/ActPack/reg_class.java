@@ -20,8 +20,13 @@ public class reg_class {
      conn con = new conn();
     
     public int register(String username, String password, String firstname, String lastname){
+//<<<<<<< HEAD
     
     
+//=======
+    //String sql = "insert into users values(null,'"+username+"',md5('"+password+"'),'"+lastname+"','"+firstname+"',0)";    
+    //System.out.println(sql);
+//>>>>>>> origin/master
     int x = 0;
     
     try{
